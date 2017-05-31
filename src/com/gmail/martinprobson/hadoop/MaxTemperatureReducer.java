@@ -1,6 +1,6 @@
 /**
- * 
- */
+* 
+*/
 package com.gmail.martinprobson.hadoop;
 
 import org.apache.hadoop.io.IntWritable;

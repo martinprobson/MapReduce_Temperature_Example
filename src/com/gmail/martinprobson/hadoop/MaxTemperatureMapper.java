@@ -4,6 +4,9 @@
 package com.gmail.martinprobson.hadoop;
 
 import java.io.IOException;
+
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.io.LongWritable;
 import org.apache.hadoop.io.Text;
@@ -20,7 +23,9 @@ public class MaxTemperatureMapper extends Mapper<LongWritable, Text, Text, IntWr
 	@Override
 	public void map(LongWritable key, Text value, Context context)
 			throws IOException, InterruptedException {
+		Log log = LogFactory.getLog(MaxTemperatureMapper.class);
 		String line = value.toString();
+		log.info("Line is:" + line);
 		String year = line.substring(15, 19);
 		int airTemperature;
 		if (line.charAt(87) == '+') { // parseInt doesn't like leading plus signs
