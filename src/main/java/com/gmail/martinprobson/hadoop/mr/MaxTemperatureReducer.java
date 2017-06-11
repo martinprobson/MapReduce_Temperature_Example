@@ -1,7 +1,7 @@
 /**
 * 
 */
-package com.gmail.martinprobson.hadoop;
+package com.gmail.martinprobson.hadoop.mr;
 
 import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.io.Text;

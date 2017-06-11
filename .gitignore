@@ -4,6 +4,7 @@
 *.log*
 *.jar
 *.jardesc
+/.settings
 package-list
 hadoop.err
 hadoop.out
@@ -16,3 +17,5 @@ index-files
 /build/
 /bin/
 /lib/
+/target/
+/ncdc_output
