@@ -11,7 +11,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import com.gmail.martinprobson.hadoop.util.FileUtil;
+import com.gmail.martinprobson.hadoop.util.HDFSUtil;
 
 
 
@@ -44,7 +44,7 @@ public class TestMapReduce {
 		Path input  = new Path(TestMapReduce.class.getResource("/mini_ncdc").toString());
 		Path output = new Path(TEST_OUTPUT_DIR);
 				
-		FileUtil.deletePath(conf,output);
+		HDFSUtil.deletePath(conf,output);
 		
 		MaxTemperatureDriver driver = new MaxTemperatureDriver();
 		driver.setConf(conf);
@@ -56,8 +56,8 @@ public class TestMapReduce {
 		assertTrue(exitCode == 0 );
 		
 		URI expectedResultsFile = TestMapReduce.class.getResource("/TestMapReduce_expected_results.txt").toURI();
-		String expectedResults = FileUtil.readLocalFile(expectedResultsFile,Charset.defaultCharset());
-		String actualResults = FileUtil.readFile(conf,new Path(TEST_OUTPUT_DIR + "/part-r-00000"));
+		String expectedResults = HDFSUtil.readLocalFile(expectedResultsFile,Charset.defaultCharset());
+		String actualResults = HDFSUtil.readFile(conf,new Path(TEST_OUTPUT_DIR + "/part-r-00000"));
 		assertTrue(expectedResults.equals(actualResults));
 		//checkoutput(conf,output);
 		
@@ -69,7 +69,7 @@ public class TestMapReduce {
 	 */
 	@After
 	public void tearDown() throws Exception {
-		FileUtil.deletePath(conf,new Path(TEST_OUTPUT_DIR));
+		HDFSUtil.deletePath(conf,new Path(TEST_OUTPUT_DIR));
 	}
 
 

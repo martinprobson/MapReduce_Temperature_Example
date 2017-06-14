@@ -31,6 +31,11 @@ exec:exec@run-cluster - Run the map reduce code on cluster.
 	</properties>
 	<dependencies>
 		<dependency>
+			<groupId>com.gmail.martinprobson</groupId>
+			<artifactId>Hadoop_Util</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		<dependency>
 			<groupId>org.apache.hadoop</groupId>
 			<artifactId>hadoop-client</artifactId>
 			<version>${hadoop.version}</version>

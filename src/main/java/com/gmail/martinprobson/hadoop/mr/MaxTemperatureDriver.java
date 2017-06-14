@@ -12,7 +12,7 @@ import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 import org.apache.hadoop.util.Tool;
 import org.apache.hadoop.util.ToolRunner;
 
-import com.gmail.martinprobson.hadoop.util.FileUtil;
+import com.gmail.martinprobson.hadoop.util.HDFSUtil;
 
 /**
  * Driver class for the MaxTemperature Example.
@@ -39,7 +39,7 @@ import com.gmail.martinprobson.hadoop.util.FileUtil;
  */
 public class MaxTemperatureDriver extends Configured implements Tool {
 
-    private static final Log LOG = LogFactory.getLog(FileUtil.class);
+    private static final Log LOG = LogFactory.getLog(HDFSUtil.class);
 	
     /**
      * Execute a MaxTemperature Map Reduce job.
@@ -65,8 +65,8 @@ public class MaxTemperatureDriver extends Configured implements Tool {
 		// Check if output path exists and delete it if it does
 		Path outputPath = new Path(args[1]);
 		LOG.info("About to check if " + outputPath + " exists.");
-		if (FileUtil.pathExists(getConf(),outputPath))
-			FileUtil.deletePath(getConf(),outputPath);
+		if (HDFSUtil.pathExists(getConf(),outputPath))
+			HDFSUtil.deletePath(getConf(),outputPath);
 		FileOutputFormat.setOutputPath(job, new Path(args[1]));
 		job.setMapperClass(MaxTemperatureMapper.class);
 		job.setReducerClass(MaxTemperatureReducer.class);
