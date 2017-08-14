@@ -23,4 +23,7 @@ Local mode
 ```bash
  mvn exec:exec@run-local 
 ```
-		
+
+## Pig Version
+
+An example of the same Map/Reduce logic using Apache pig is in the MapReduce_Pig directory (see the README file in that directory for details).
