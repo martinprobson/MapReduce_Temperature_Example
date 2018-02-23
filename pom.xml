@@ -136,7 +136,7 @@ exec:exec@run-cluster - Run the map reduce code on cluster.
 							<arguments>
 								<argument>jar</argument>
 								<argument>${project.build.directory}/${project.artifactId}-${project.version}.jar</argument>
-								<argument>com.gmail.martinprobson.hadoop.mr.MaxTemperatureDriver</argument>
+								<argument>net.martinprobson.hadoop.mr.MaxTemperatureDriver</argument>
 								<argument>${hdfs.input.dir}</argument>
 								<argument>${hdfs.output.dir}</argument>
 							</arguments>
@@ -155,7 +155,7 @@ exec:exec@run-cluster - Run the map reduce code on cluster.
 							<arguments>
 								<argument>--config</argument>
 								<argument>${project.basedir}/src/test/resources</argument>
-								<argument>com.gmail.martinprobson.hadoop.mr.MaxTemperatureDriver</argument>
+								<argument>net.martinprobson.hadoop.mr.MaxTemperatureDriver</argument>
 								<argument>${local.input.dir}</argument>
 								<argument>${local.output.dir}</argument>
 							</arguments>

@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.gmail.martinprobson.hadoop.mr;
+package net.martinprobson.hadoop.mr;
 
 import java.io.IOException;
 import org.apache.commons.logging.Log;

@@ -1,11 +1,9 @@
-package com.gmail.martinprobson.hadoop.mr;
+package net.martinprobson.hadoop.mr;
 
 import java.io.IOException;
 import java.util.Arrays;
 
 import org.junit.Test;
-
-import com.gmail.martinprobson.hadoop.mr.MaxTemperatureReducer;
 
 import org.apache.hadoop.io.*;
 import org.apache.hadoop.mrunit.mapreduce.ReduceDriver;

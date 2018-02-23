@@ -1,11 +1,8 @@
-package com.gmail.martinprobson.hadoop.mr;
+package net.martinprobson.hadoop.mr;
 
 import static org.junit.Assert.*;
 
 import org.junit.Test;
-
-import com.gmail.martinprobson.hadoop.mr.MaxTemperatureParser;
-import com.gmail.martinprobson.hadoop.mr.ParseException;
 
 import org.apache.hadoop.io.Text;
 public class TestMaxTemperatureParser {

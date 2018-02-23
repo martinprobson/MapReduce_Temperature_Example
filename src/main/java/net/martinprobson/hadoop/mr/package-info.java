@@ -27,4 +27,4 @@
  * @author martinr
  *
  */
-package com.gmail.martinprobson.hadoop.mr;
+package net.martinprobson.hadoop.mr;

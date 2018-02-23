@@ -1,4 +1,4 @@
-package com.gmail.martinprobson.hadoop.mr;
+package net.martinprobson.hadoop.mr;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -8,7 +8,6 @@ import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Job;
 import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
-import org.apache.hadoop.mapreduce.lib.input.SequenceFileInputFormat;
 import org.apache.hadoop.mapreduce.lib.input.TextInputFormat;
 import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 
@@ -27,12 +26,12 @@ import com.gmail.martinprobson.hadoop.util.HDFSUtil;
  * Running on a cluster via yarn: -
  * <p>
  * <code>
- * yarn jar jar_name com.gmail.martinprobson.hadoop.mr.MaxTemperatureDriver input_dir output_dir
+ * yarn jar jar_name MaxTemperatureDriver input_dir output_dir
  * </code>
  * <p>Running locally: -
  * <p>
  * <code>
- * hadoop --config local_config_file com.gmail.martinprobson.hadoop.mr.MaxTemperatureDriver input_dir output_dir
+ * hadoop --config local_config_file MaxTemperatureDriver input_dir output_dir
  * </code>
  * <p>Both run configurations are setup in the project pom.xml as goals <code>exec:exec@run-cluster</code> and 
  * <code>exec:exec@run-local</code> respectively.<p>
@@ -60,7 +59,9 @@ public class MaxTemperatureDriver extends Configured implements Tool {
 			return -1;
 		}
 		Job job = Job.getInstance(getConf());
-		job.setInputFormatClass(SequenceFileInputFormat.class);
+//TODO 14/10/2017 The test input file are in text format.....		
+//		job.setInputFormatClass(SequenceFileInputFormat.class);
+		job.setInputFormatClass(TextInputFormat.class);
 		job.setJarByClass(MaxTemperatureDriver.class);
 		job.setJobName("Max temperature");
 		// Ensure that all files are read in the directory

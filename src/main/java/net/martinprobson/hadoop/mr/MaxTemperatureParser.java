@@ -1,4 +1,4 @@
-package com.gmail.martinprobson.hadoop.mr;
+package net.martinprobson.hadoop.mr;
 
 import org.apache.hadoop.io.Text;
 

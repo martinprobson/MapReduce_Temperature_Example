@@ -1,11 +1,9 @@
-package com.gmail.martinprobson.hadoop.mr;
+package net.martinprobson.hadoop.mr;
 
 
 import java.io.IOException;
 
 import org.junit.Test;
-
-import com.gmail.martinprobson.hadoop.mr.MaxTemperatureMapper;
 
 import org.apache.hadoop.io.*;
 import org.apache.hadoop.mrunit.mapreduce.MapDriver;
