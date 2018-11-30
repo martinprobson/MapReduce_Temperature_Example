@@ -11,7 +11,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import com.gmail.martinprobson.hadoop.util.HDFSUtil;
+import net.martinprobson.hadoop.util.HDFSUtil;
 
 
 

@@ -14,7 +14,7 @@ import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 import org.apache.hadoop.util.Tool;
 import org.apache.hadoop.util.ToolRunner;
 
-import com.gmail.martinprobson.hadoop.util.HDFSUtil;
+import net.martinprobson.hadoop.util.HDFSUtil;
 
 /**
  * Driver class for the MaxTemperature Example.
